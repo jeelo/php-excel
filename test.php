@@ -1,18 +1,14 @@
 <?php
 
-// load library
-require 'php-excel.class.php';
+require dirname(__FILE__) . '/php-excel.class.php';
 
-// create a simple 2-dimensional array
 $data = array(
-        1 => array ('Name', 'Surname'),
-        array('Schwarz', 'Oliver'),
-        array('Test', 'Peter')
-        );
+        0 => array('Nr.', 'Name', 'E-Mail'),
+        array(1, 'Oliver Schwarz', 'oliver.schwarz@gmail.com'),
+        array(2, 'Hasematzel', 'hasematzel@gmail.com'));
 
-// generate file (constructor parameters are optional)
-$xls = new Excel_XML('UTF-8', false, 'My Test Sheet');
-$xls->addArray($data);
-$xls->generateXML('my-test');
+$xls = new Excel_XML;
+$xls->addWorksheet('Names', $data);
+$xls->sendWorkbook('test.xml');
 
 ?>
