@@ -271,5 +271,3 @@ class Excel_XML
         }
 
 }
-
-?>
