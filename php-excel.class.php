@@ -118,6 +118,8 @@ class Excel_XML
          * Adds a single row to the document. If set to true, self::bConvertTypes
          * checks the type of variable and returns the specific field settings
          * for the cell.
+	 * Note: this breaks on the main repo (not forked one) when using a +phonenumber which
+	 * is a numeric according to PHP but not in Excel with type="Number"
          * 
          * @param array $array One-dimensional array with row content
          */
